@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:my_flutter_app/ui/pages/main/main.dart';
-
+import 'package:my_flutter_app/core/router/routers.dart';
+import 'package:provider/provider.dart';
+import 'package:my_flutter_app/core/viewmodel/meal_view_model.dart';
+import 'package:my_flutter_app/common/size_fit.dart';
 
 /// 日志打印相关
 final Logger _logger = Logger(
@@ -23,7 +25,12 @@ void logwtf(dynamic message) => _logger.wtf(message);
 
 void main() {
   logd("ssss11111");
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+        create: (ctx) => LLMealViewModel(),
+        child: MyApp()
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -32,6 +39,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return LLMainScreen();
+    LLSizeFit.initialize();
+
+    return MaterialApp(
+      title: "美食广场",
+      initialRoute: LLRouter.initialRoute,
+      routes: LLRouter.routers,
+      onGenerateRoute: LLRouter.generateRoute,
+      onUnknownRoute: LLRouter.unknownRoute,
+    );
   }
 }

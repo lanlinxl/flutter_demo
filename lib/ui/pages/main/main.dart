@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../main/initialize_items.dart';
 class LLMainScreen extends StatefulWidget{
+  static const String routeName = "/";
+
   @override
   State<LLMainScreen> createState() => _LLMainScreenState();
 }
