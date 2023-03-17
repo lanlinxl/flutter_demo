@@ -7,7 +7,6 @@ class LLRouter {
 
   static final Map<String,WidgetBuilder> routers = {
 
-
   };
 
   static final RouteFactory generateRoute = (settings) {
