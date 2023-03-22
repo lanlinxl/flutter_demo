@@ -24,7 +24,6 @@ void logwtf(dynamic message) => _logger.wtf(message);
 
 
 void main() {
-  logd("ssss11111");
   runApp(
     ChangeNotifierProvider(
         create: (ctx) => LLMealViewModel(),

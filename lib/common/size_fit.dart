@@ -24,11 +24,11 @@ class LLSizeFit{
     // 1.手机的物理分辨率
     physicalWidth = window.physicalSize.width;
     physicalHeight = window.physicalSize.height;
-    logd("分辨率 physicalWidth:$physicalWidth ,physicalHeight:$physicalHeight");
+    //logd("分辨率 physicalWidth:$physicalWidth ,physicalHeight:$physicalHeight");
 
     // 2.获取dpr
     dpr = window.devicePixelRatio;
-    logd("devicePixelRatio: $dpr");
+    //logd("devicePixelRatio: $dpr");
 
     // 3.宽度和高度
     screenWidth = physicalWidth / dpr;
@@ -36,12 +36,12 @@ class LLSizeFit{
 
     // 4.状态栏高度
     statusHeight = window.padding.top / dpr;
-    logd("statusHeight: $statusHeight");
+    //logd("statusHeight: $statusHeight");
 
     // 5.计算rpx的大小
     rpx = screenWidth / standardSize;
     px = (screenWidth * 2) / standardSize ;
-    logd("rpx: $rpx ,px: $px");
+    //logd("rpx: $rpx ,px: $px");
   }
 
 
