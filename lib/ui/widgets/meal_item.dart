@@ -31,8 +31,6 @@ class LLMealItem extends StatelessWidget{
 
       );
     }
-
-
     Widget buildBasiInfo(BuildContext context){
         return Stack(
           children: <Widget>[
