@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:my_flutter_app/core/router/routers.dart';
+import 'package:my_flutter_app/core/viewmodel/initialize_providers.dart';
 import 'package:provider/provider.dart';
 import 'package:my_flutter_app/core/viewmodel/meal_view_model.dart';
 import 'package:my_flutter_app/common/size_fit.dart';
@@ -25,10 +26,10 @@ void logwtf(dynamic message) => _logger.wtf(message);
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-        create: (ctx) => LLMealViewModel(),
-        child: MyApp()
-    ),
+    MultiProvider(
+      providers: customProviders,
+      child: MyApp(),
+    )
   );
 }
 

@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/core/router/unknown.dart';
+import 'package:my_flutter_app/main.dart';
 import 'package:my_flutter_app/ui/pages/main/main.dart';
 import 'package:my_flutter_app/ui/pages/meal/meal.dart';
 
@@ -14,6 +15,7 @@ class LLRouter {
   };
 
   static final RouteFactory generateRoute = (settings) {
+    logd("settings.name: $settings.name");
     if (settings.name == LLMainScreen.routeName){
       return  MaterialPageRoute(
           builder: (ctx) {

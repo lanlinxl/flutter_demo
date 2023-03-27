@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:my_flutter_app/core/model/category_model.dart';
+import 'package:my_flutter_app/core/model/meal_model.dart';
 import 'package:my_flutter_app/main.dart';
 
 class LLJsonParse {
@@ -20,6 +21,23 @@ class LLJsonParse {
       categorries.add(LLCategoryModel.fromJson(json));
     }
     return categorries;
+  }
+
+  static Future<List<LLMealModel>> getMealData() async {
+    logd("getCategoryDatagetCategoryDatagetCategoryData");
+    // 1. 加载json文件
+    final jsonString = await rootBundle.loadString("assets/json/meal.json");
+    // 2.将jsonString转成Map/List
+    final result = json.decode(jsonString);
+
+    // 3.将Map中的内容转成一个个对象
+    final reslutList = result["meal"];
+    List<LLMealModel> meals = [];
+
+    for (var json in reslutList){
+      meals.add(LLMealModel.fromJson(json));
+    }
+    return meals;
   }
 
 }

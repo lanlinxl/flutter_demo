@@ -27,9 +27,7 @@ class LLHomeCategoryItem extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           _category.title,
-          style: Theme.of(context).textTheme.displayMedium?.copyWith(
-            fontWeight: FontWeight.bold
-          ),
+          style: const TextStyle(fontSize: 20),
         )
       ),
 

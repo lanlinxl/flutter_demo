@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'package:my_flutter_app/core/viewmodel/meal_view_model.dart';
 
-LLMealModel mealModelFromJson(String str) {
+LLMealModel fromJson(String str) {
   return LLMealModel.fromJson(json.decode(str));
 }
 
-String mealModelToJson(LLMealModel data) => json.encode(data.toJson());
+String toJson(LLMealModel data) => json.encode(data.toJson());
 
 List<String> complexes = ["简单","中等","困难"];
 

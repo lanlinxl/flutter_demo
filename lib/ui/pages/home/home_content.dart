@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/core/extension/int+.dart';
 import 'package:my_flutter_app/core/model/category_model.dart';
-import 'package:my_flutter_app/core/services/LLJsonParse.dart';
+import 'package:my_flutter_app/core/services/json_parse.dart';
 import 'package:my_flutter_app/main.dart';
 import 'package:my_flutter_app/ui/pages/home/home_category_item.dart';
 
@@ -11,8 +11,8 @@ class LLHomeContent extends StatelessWidget{
     return FutureBuilder<List<LLCategoryModel>>(
         future: LLJsonParse.getCategoryData(),
         builder: (ctx , snapshot){
-          if (!snapshot.hasData) return Center(child: CircularProgressIndicator(),);
-          if (snapshot.error != null) return Center(child: Text("请求失败"),);
+          if (!snapshot.hasData) return const Center(child: CircularProgressIndicator(),);
+          if (snapshot.error != null) return const Center(child: Text("请求失败"),);
 
           final categories = snapshot.data as List;
           return GridView.builder(
