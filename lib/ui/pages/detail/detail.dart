@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/core/model/meal_model.dart';
+import 'package:my_flutter_app/ui/pages/detail/detail_content.dart';
 
 
 class LLDetailScreen extends StatelessWidget {
@@ -18,7 +19,7 @@ class LLDetailScreen extends StatelessWidget {
         title: Text(mealModel.title),
       ),
       body: Center(
-        child: Text(mealModel.title),
+        child: LLDetailContent(mealModel),
       ),
     );
   }
